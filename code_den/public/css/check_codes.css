@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #12063B, #09555C); /* Gradient background */
+    color: #ffffff; /* Default text color */
+    padding: 20px; /* Add some padding */
+}
+
+.container {
+    background-color: rgba(30, 59, 90, 0.9); /* Semi-transparent dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 800px; /* Limit max width for larger screens */
+    margin: 20px;
+    position: relative; /* Position relative for absolute positioning of button */
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 1.1em;
+    margin-bottom: 20px; /* Add space between fields */
+}
+
+pre {
+    font-size: 1em;
+    background-color: white; /* Darker background for code */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Allow horizontal scrolling for long code */
+    margin-bottom: 20px; /* Add space below code */
+    color: black;
+}
+
+.back-button {
+    position: absolute; /* Position the button absolutely */
+    top: 20px; /* Space from the top */
+    right: 20px; /* Space from the right */
+    background-color: #3b7ddd; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 0.5rem 1rem; /* Adjust padding */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #4a7f9e; /* Darker blue on hover */
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons */
+}
+
+.accept-button {
+    background-color: #28a745; /* Green background */
+    color: #ffffff; /* White text */
+    padding: 0.5rem 1rem; /* Adjust padding */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.accept-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.reject-button {
+    background-color: #dc3545; /* Red background */
+    color: #ffffff; /* White text */
+    padding: 0.5rem 1rem; /* Adjust padding */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.reject-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.check-button {
+    background-color: lightblue; /* Green background */
+    color: black; /* White text */
+    padding: 0.5rem 1rem; /* Adjust padding */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.similar-codes {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Padding inside the section */
+    margin-top: 20px; /* Space above the similar codes section */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.similar-codes h3 {
+    font-size: 1.5em; /* Slightly larger font size for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+}
+
+.similar-codes ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.similar-codes li {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for each item */
+    border-radius: 5px; /* Rounded corners for list items */
+    padding: 10px; /* Padding inside list items */
+    margin-bottom: 10px; /* Space between list items */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.similar-codes li:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Change background on hover */
+}
+
+.similar-codes strong {
+    color: black; /* Color for strong text (titles and dates) */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .label, .value {
+        font-size: 1em;
+    }
+
+    pre {
+        font-size: 0.9em;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accept-button, .reject-button, .check-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .label, .value {
+        font-size: 0.95em;
+    }
+
+    pre {
+        font-size: 0.85em;
+    }
+
+    .back-button {
+        top: 10px;
+        right: 10px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accept-button, .reject-button, .check-button {
+        font-size: 0.9em;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+        margin: 8px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .label, .value {
+        font-size: 0.9em;
+    }
+
+    pre {
+        font-size: 0.8em;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .accept-button, .reject-button, .check-button {
+        font-size: 0.8em;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

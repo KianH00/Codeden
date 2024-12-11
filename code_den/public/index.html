@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json">
+    <title>Code Den</title>
+  </head>
+  <body>
+    <!--Log In page-->
+    <header>
+      <h1 class="logo">
+        <span style="color: black">C</span>ode<span style="color: black">D</span
+        >en
+      </h1>
+    </header>
+
+    <!--Log in form-->
+    <div id="wrapper" class="wrapper">
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form
+          action="http://127.0.0.1:80/code_den/backend/login.php"
+          method="POST"
+        >
+          <div class="input-box">
+            <input type="text" id="username" name="username" required />
+            <label for="username">Username</label>
+          </div>
+          <div class="input-box">
+            <input type="password" id="password" name="password" required />
+            <label for="password">Password</label>
+            <button
+              type="button"
+              class="view-password"
+              onclick="togglePasswordVisibility('password')"
+              title="Show/Hide Password"
+            >
+              👁
+            </button>
+          </div>
+          <button type="submit" class="btnn">Login</button>
+          <div class="login-register">
+            <p>
+              Don't have an account?
+              <a href="#" class="register-link">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!--Register Form-->
+      <div class="form-box register">
+        <h2>Registration</h2>
+        <form
+          action="http://127.0.0.1:80/code_den/backend/register.php"
+          method="POST"
+        >
+          <!-- Name -->
+          <div class="input-box">
+            <input type="text" id="name" name="name" required />
+            <label for="name">Name</label>
+          </div>
+
+          <!-- Username -->
+          <div class="input-box">
+            <input type="text" id="username" name="username" required />
+            <label for="username">Username</label>
+          </div>
+
+          <!-- Password -->
+          <div class="input-box">
+            <input
+              type="password"
+              id="register_password"
+              name="password"
+              required
+            />
+            <label for="register_password">Password</label>
+            <button
+              type="button"
+              class="view-password"
+              onclick="togglePasswordVisibility('register_password')"
+              title="Show/Hide Password"
+            >
+              👁
+            </button>
+            <div
+              id="password_strength_notification"
+              style="display: none; color: red; text-align: center"
+            ></div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="input-box">
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              required
+              oninput="checkPasswordsMatch()"
+            />
+            <label for="confirm_password">Confirm Password</label>
+            <button
+              type="button"
+              class="view-password"
+              onclick="togglePasswordVisibility('confirm_password')"
+              title="Show/Hide Password"
+            >
+              👁
+            </button>
+          </div>
+
+          <!-- Year Level -->
+          <div class="input-box">
+            <select id="year_level" name="year_level" required>
+              <option value="" disabled selected hidden>
+                Choose your year level
+              </option>
+              <option value="First Year">First Year</option>
+              <option value="Second Year">Second Year</option>
+              <option value="Third Year">Third Year</option>
+              <option value="Fourth Year">Fourth Year</option>
+            </select>
+          </div>
+
+          <!-- Notification -->
+          <div
+            id="notification"
+            style="display: none; color: red; text-align: center"
+          ></div>
+
+          <!-- Register Button -->
+          <button type="submit" class="btnn">Register</button>
+
+          <!-- Login Link -->
+          <div class="login-register">
+            <p>
+              Already have an account?
+              <a href="index.html" class="login-link">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

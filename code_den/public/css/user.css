@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 3.0rem;
+    color: #ddd;
+}
+
+.text-center{
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #0e2238;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh; /* Ensures the main section takes at least full viewport height */
+    max-height: 100vh; /* Limits the height to the viewport height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    width: 100%;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #0e2238;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.799);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-dropdown .btn {
+    padding: 10px;
+    width: 240px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.sidebar-dropdown .btn:hover {
+    background-color: rgba(255, 255, 255, .075);
+}
+
+.posted-codes-container {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: #0e2238; /* Light background color for the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.posted-codes {
+    margin-top: 20px; /* Space above the posted codes section */
+}
+
+.posted-codes h2 {
+    font-size: 1.5rem; /* Font size for the section title */
+    margin-bottom: 15px; /* Space below the title */
+    color: #333; /* Dark color for the title */
+}
+
+.codes-wrapper {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Change to column to stack items vertically */
+    gap: 20px; /* Space between code containers */
+}
+
+.code-container {
+    background-color: #fff; /* White background for code containers */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    width: 100%; /* Allow it to take full width of parent */
+    max-width: 1150px; /* Set a maximum width for the code container */
+    min-width: 300px; /* Optional: Set a minimum width for smaller screens */
+}
+
+.code-container h3 {
+    font-size: 1.2rem; /* Font size for code title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.code-container p {
+    margin-bottom: 10px; /* Space below the language paragraph */
+    color: #555; /* Darker color for the language text */
+}
+
+code {
+    background-color: #f8f8f8; /* Light gray background for code snippets */
+    padding: 2px 4px; /* Padding for inline code */
+    border-radius: 4px; /* Rounded corners for inline code */
+}
+
+pre {
+    background-color: darkgray; /* Light gray background for code blocks */
+    padding: 10px; /* Padding inside the preformatted text */
+    border-radius: 5px; /* Rounded corners */
+    overflow-x: auto; /* Allow horizontal scrolling for long lines */
+    overflow-y: auto; /* Allow vertical scrolling for long lines */
+    max-height: 200px; /* Set a maximum height for the code block */
+    white-space: pre-wrap; /* Wrap long lines */
+    color: #000; /* Change code color to black */
+}
+
+.copy-button {
+    float: right; /* Float the button to the right */
+    margin-top: 5px; /* Add some space above the button */
+    margin-bottom: 5px;
+    padding: 3px 6px; /* Reduced padding for a smaller button */
+    font-size: 0.8rem; /* Smaller font size */
+    background-color: #3b7ddd; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Slightly smaller rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.copy-button:hover {
+    background-color: #2a5bba; /* Darker shade on hover */
+}
+
+.saved-button {
+    float: left; /* Float the button to the right */
+    padding: 10px 8px; /* Reduced padding for a smaller button */
+    font-size: 1rem; /* Smaller font size */
+    background-color: #3b7ddd; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Slightly smaller rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.saved-button:hover {
+    background-color: #2a5bba; /* Darker shade on hover */
+}
+
+.search-form {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    margin-top: 10px; /* Space above the search bar */
+    margin-bottom: 10px;
+}
+
+.search-input {
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    width: 1100px; /* Fixed width for the input */
+    font-size: 1rem; /* Font size for the input */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.search-input:focus {
+    border-color: #3b7ddd; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-button {
+    padding: 10px 15px; /* Padding inside the button */
+    margin-top: 10px;
+    margin-left: 10px; /* Space between input and button */
+    margin-bottom: 10px;
+    background-color: #3b7ddd; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1rem; /* Font size for the button */
+}
+
+.search-button:hover {
+    background-color: #2a5bba; /* Darker shade on hover */
+}
+
+.button-scroll-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 5px 0; /* Add some padding */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the content */
+    margin-bottom: 15px;
+}
+
+.button-scroll-container .d-flex {
+    flex-wrap: nowrap; /* Ensure buttons stay in a single line */
+}
+
+.tutorial-links-container {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    margin-bottom: 15px;
+    padding: 20px; /* Padding inside the container */
+    background-color: #0e2238; /* Light background color for the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: white;
+}
+
+.links-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    gap: 15px; /* Space between links */
+    padding: 10px 0; /* Padding for the links container */
+    background-color: #fff; /* White background for code containers */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    width: 100%; /* Allow it to take full width of parent */
+    max-width: 1150px; /* Set a maximum width for the code container */
+    min-width: 300px; /* Optional: Set a minimum width for smaller screens */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    max-height: 200px; /* Set a maximum height for the links container */
+    overflow-y: auto;
+}
+
+.link-wrapper {
+    padding: 10px; /* Add some padding around the link */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px; /* Rounded corners */
+    width: 1050px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.link-wrapper:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+}
+
+
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
+
+    .code-container {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .year-level, .username {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .year-level, .username {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}

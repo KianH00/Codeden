@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e3a4a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    color: #ffffff; /* Adjust text color for better contrast */
+}
+
+.dashboard {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: #0e2238; /* Light background color for the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.user-info-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Change to column to stack items vertically */
+    gap: 20px; /* Space between code containers */
+}
+
+.user-info {
+    background-color: #fff; /* White background for user info */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    color: #000; /* Dark text for better readability */
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.year-level, .username {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0.5rem 0 0 0;
+}
+
+.posted-codes-container {
+    margin-top: 10px; /* Space above the posted codes section */
+    background-color: #fff; /* White background for the codes container */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.posted-codes-container h2 {
+    margin-top: 0px;
+    font-size: 2.0rem; /* Font size for code title */
+    margin-bottom: 10px; /* Space below the title */
+    color: #000; /* Change title color to black */
+}
+
+.codes-wrapper {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Change to column to stack items vertically */
+    gap: 20px; /* Space between code containers */
+}
+
+.code-container {
+    background-color: #f8f8f8; /* Light gray background for code containers */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    width: 1150px; /* Fixed width for each code container */
+    min-width: 1150px; /* Minimum width for smaller screens */
+}
+
+.code-container h3 {
+    margin-top: 0px;
+    font-size: 1.5rem; /* Font size for code title */
+    margin-bottom: 10px; /* Space below the title */
+    color: #000; /* Change title color to black */
+}
+
+.code-container p {
+    margin-bottom: 10px; /* Space below the language and status paragraphs */
+    color: #555; /* Darker color for the text */
+}
+
+.copy-button {
+    font-family: 'Poppins', sans-serif;
+    float: right; /* Float the button to the right */
+    margin-top: 10px; /* Add some space above the button */
+    padding: 3px 6px; /* Reduced padding for a smaller button */
+    font-size: 0.8rem; /* Smaller font size */
+    background-color: #3b7ddd; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Slightly smaller rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.copy-button:hover {
+    background-color: #2a5bba; /* Darker shade on hover */
+}
+
+.delete-button {
+    font-family: 'Poppins', sans-serif;
+    float: right; /* Float the button to the right */
+    margin-top: 10px; /* Add some space above the button */
+    padding: 3px 6px; /* Reduced padding for a smaller button */
+    font-size: 0.8rem; /* Smaller font size */
+    background-color: red; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Slightly smaller rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.delete-button:hover {
+    background-color: lightcoral; /* Darker shade on hover */
+}
+
+pre {
+    background-color: darkgray; /* Light gray background for code blocks */
+    padding: 10px; /* Padding inside the preformatted text */
+    border-radius: 5px; /* Rounded corners */
+    overflow-x: auto; /* Allow horizontal scrolling for long lines */
+    overflow-y: auto; /* Allow vertical scrolling for long lines */
+    max-height: 200px; /* Set a maximum height for the code block */
+    white-space: pre-wrap; /* Wrap long lines */
+    color: #000; /* Change code color to black */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3b7ddd;
+    margin-top: 20px;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #2a5bba; /* Darker shade on hover */
+}
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
+
+    .code-container {
+        width: 90%;
+        min-width: unset;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .year-level, .username {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .year-level, .username {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
